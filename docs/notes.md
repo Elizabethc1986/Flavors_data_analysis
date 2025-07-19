@@ -4,6 +4,28 @@ actualizacion: 2025-07-06
 ---
 
 # Notas del Proyecto
+## 2025-07-19
+-Create visualizations
+Echarts:
+1.get echart 
+2.Create index.html
+3.Copy and paste the html content
+4.Open the file in the browser and make sure we don see errors
+Word wrap: Alt+Z
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js"></script>
+### Restrospective:
+-Went well/do more: We achieved -get visualization of the data with echart.Its important making notes.Try to explain the inscrtuctions.
+-Confuse/do different:
+All the time i dont how to identify: sql,python and java script
+-Frustrations/emotons: its confusing when i jump to another language
+-Action plan:
+1.Tell what we did the last time and our mision for that class
+2.More comments in spanish
+3.Be proud of myself Bravo Eli!!
+
+
+
 ## 2025-07-18
 -problem: each time we load the database Flavors.Maybe the data run two or three times.
 -Load csv into dtabase and rename the file 
