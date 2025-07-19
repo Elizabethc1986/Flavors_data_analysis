@@ -29,6 +29,11 @@ https://echarts.apache.org/examples/en/editor.html?c=data-transform-multiple-pie
 https://echarts.apache.org/examples/en/editor.html?c=bar-race&theme=dark
 https://echarts.apache.org/examples/en/editor.html?c=pie-rich-text&theme=dark
 
+Achieved: install and unploaded the code repository(Git and git hub)
+Frustrairing: It was difficult because i didt have this knowledge
+Cool: I can see my projects updated all the time in a repository .Sharing my code as open source
+
+
 
 ## 2025-07-06
 - Vision:cientifico de datos.Porque quiero aprender a entender la infomacion y poder generar nuevas ideas y estrategias en la compañia o para mi vida personal.Me ayuda porque puede tener mas conocimiento en programacion y me puede generar nuevas oportunidades laborales /de forma independiente.
