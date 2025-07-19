@@ -14,12 +14,20 @@ Install Git init on windows
 ```
 echo "# Flavors_data_analysis" >> README.md
 git init
+git status # Very common
+
 git add README.md
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/Elizabethc1986/Flavors_data_analysis.git
 git push -u origin main
 ```
+-Data visualization
+-More data anallysis with statistics:Maximum,Minimum,avarage...
+Visualization:
+https://echarts.apache.org/examples/en/editor.html?c=data-transform-multiple-pie&theme=dark
+https://echarts.apache.org/examples/en/editor.html?c=bar-race&theme=dark
+https://echarts.apache.org/examples/en/editor.html?c=pie-rich-text&theme=dark
 
 
 ## 2025-07-06
