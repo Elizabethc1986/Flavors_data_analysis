@@ -1,0 +1,159 @@
+to close python interpreter CTRL+D
+python events.py
+Cd change directory
+
+
+cd C:\Users\eliza\OneDrive\Escritorio\Projects\
+dir list the files on the directory
+Tab autocomplete on the terminal
+
+
+Accion plan 
+step1:use paython to download a webpage
+step2: use python to get information from the webpage
+step3: use python to create a new htlm files
+step4: Publishing the htlm files
+
+questions
+how to download a webpage with python
+how to install a python package (for example: Beautiful soup)
+how to automatically create a webpage with python 
+How do you publish an html web page to a web server so other people can see it 
+
+mini retrospective
+- what went well / do more
+- what is confusing / clarify
+- what was frustrating and annoying
+- TRY NEXT TIME
+Try to explain in spanish
+
+
+Frustraiting: 
+
+## 2025-05-10
+### Retrospectiva
+- what went well / do more: i learn how to add photo,update the event .I could undertand the programming logic.
+- what is confusing / clarify:Ul and LA
+- what was frustrating and annoying
+- TRY NEXT TIME get a better place with air conditioner
+
+
+
+## TO-DO 
+- 
+get colors/look for a website what i like for example
+-Change background color 
+-Change text color
+domain name and link
+disactivate code auto-complete
+use python 
+
+## Later
+disactivate code auto-complete
+
+##Achievments
+-People coffee photo
+-we nedd to delete the event on april 26th
+downloaded photo
+-Create a new event for the month of may and june 3 for may and 3 fo june-
+
+## Inspiracion & ideas
+https://co.pergamino.co/
+https://kiinliving.com/
+https://flattrackcoffee.com/
+
+Nootas sabado 10 mayo
+https://www.namecheap.com/domains/registration/results/?domain=elizabeth+bedoya%5C
+Abrir el Vs codium 
+Abrir mi carpeta de proyecto usando Vs codium
+Abrir pagina web en el navegador
+Abrir las notas del proyecto
+
+Metas
+1.revisar la clase anterior
+2.Mejorar las paginas de cafe
+3.Adicionar una foto
+4.Diseños
+5.Nombre del dominio
+6.Servidor
+7.Cosas para bsucar-codepen(para practicar html)
+8.Retrospectiva
+
+
+Con tecla windows + E se abre el explorador
+Para abril la carpeta de pryectos > En escritorio /carpeta y abrirla o simplemente arrastro la carpeta hacia el editor Vs codium
+
+Para abrirlo desde Vs code ,click derecho
+
+En view word wrap puedo comprimir la informacion para ver la informacion en una sol vist
+
+How to insert an image to html:some examples are
+1)<img src="image.jpg" alt="Description of the image">
+2)<img
+            src=
+"img/image.png"
+            alt="Description of the image"
+        />
+3)<img src="http://www.exampleimagehost.com/my-cute-dog.jpg">
+
+<img src="fotos/people_coffee.jpeg" alt="People and coffee" width="100
+%">
+
+How to see the code in a website: Ctrl+shift+I
+
+Notas Mayo 17
+
+## TO-DO 
+- 
+1.get colors/look for a website what i like for example
+-Change background color > #FFEFE2  painting tool for windows.
+2.Change text color:#B07856 painting tool for windows
+domain name and link
+3.disactivate code auto-complete
+use python 
+
+4.Adding columms to the web page:
+
+.column-left {
+   float: left;
+   width: 50%;
+}
+
+.column-right {
+   float: right;
+   width: 50%;
+}
+
+5.How to make a border:  border: 1px solid red;
+
+<div class="column-left">Hello</div>
+<div class="column-right">hello world</div>
+
+
+
+## Later
+disactivate code auto-complete
+
+Task
+Find a good background color
+
+Retrospective:
+1.What went well:this time i undertood the code easier 
+2.what was confusing:New type of code CSS style
+Actions plan
+1.Practicing at home: change color,change the text color 
+2.Add data 
+3.Practicing
+4.Add python analysis
+5.Add font
+
+
+2025-05-26
+1.how to understand the python for loops
+2.How to understand the F use to print
+3.Frustrations:How get the data.
+4.Lets data into database(csv,sqlite database)
+5.Get data with numbers
+6.Statistics
+7.Graphics
+8.Chart libraries

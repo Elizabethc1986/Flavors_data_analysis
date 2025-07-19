@@ -1,0 +1,39 @@
+coffee shops events
+
+
+<html>
+
+<body>
+
+<h1>Medellin coffee shops events</h1>
+
+<h2>Envigado</h2>
+
+<ul>
+<li>
+
+<a href="https://www.otraparte.org/agenda-cultural/">Otraparte Cafe events</a>
+
+
+
+</li>
+<li><a href="https://www.instagram.com/anamaste.boutiquecafe/">Anamasté Cafe events</a>
+<ul>
+
+<li>Every friday at 19:00 - Language exchange</li>
+<li>
+<a href="https://www.instagram.com/anamaste.boutiquecafe/p/DIv3iElx96h/">Wine tasting saturday april 26th at 19:00 </a>
+
+</li>
+
+</ul>
+
+
+</li>
+<li><a href="https://www.elmamm.org/programacion/">Elmamm Cafe events</a></li>
+</ul>
+
+
+
+</body>
+</html>
