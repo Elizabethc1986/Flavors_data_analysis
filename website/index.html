@@ -12,25 +12,26 @@
     <script type="text/javascript">
       // Initialize the echarts instance based on the prepared dom
       var myChart = echarts.init(document.getElementById('main'));
+      //[('Sour', 1277), ('Sweet', 1053), ('Salty', 809), ('Spicy', 18)]
 
       // Specify the configuration items and data for the chart
       var option = {
         title: {
-          text: 'ECharts Getting Started Example'
+          text: 'Taste preferences of Mediterranean people'
         },
         tooltip: {},
         legend: {
-          data: ['sales']
+          data: ['Taste preferences']
         },
         xAxis: {
-          data: ['Shirts', 'Cardigans', 'Chiffons', 'Pants', 'Heels', 'Socks']
+          data: ['Sour', 'Sweet', 'Salty', 'Spicy']
         },
         yAxis: {},
         series: [
           {
-            name: 'sales',
+            name: 'Number of people',
             type: 'bar',
-            data: [5, 20, 36, 10, 10, 20]
+            data: [1277, 1053, 809, 18]
           }
         ]
       };
