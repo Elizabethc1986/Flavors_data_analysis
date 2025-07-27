@@ -2,6 +2,13 @@
 titulo: "Notas del Proyecto"
 actualizacion: 2025-07-06
 ---
+## 2025-07-23
+-Create more visualization
+-Publish codes in github
+-Explore more analysis-correleations: between people who like salty food and practice heavy sports
+-Predict -decisions
+
+
 
 # Notas del Proyecto
 ## 2025-07-19
@@ -22,7 +29,9 @@ All the time i dont how to identify: sql,python and java script
 -Action plan:
 1.Tell what we did the last time and our mision for that class
 2.More comments in spanish
-3.Be proud of myself Bravo Eli!!
+3.Explore more analysis-correleations: between people who like salty food and practice heavy sports
+4.Predict -decisions
+5.Be proud of myself Bravo Eli!!
 
 
 

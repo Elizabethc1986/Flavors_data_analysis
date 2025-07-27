@@ -3,12 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <!-- Include the ECharts file you just downloaded -->
+      <!-- This HTML code creates a simple bar chart using the ECharts JavaScript library to visualize taste preferences data. Here's what it does: -->
+    <!--Sets up a standard HTML page with UTF-8 encoding
+      Includes the ECharts library from a CDN (version 5.6.0)
+      Creates a container <div> with ID "main" sized at 600x400 pixels to display the chart-->
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js"></script>
   </head> 
 <body>
   <!-- Prepare a DOM with a defined width and height for ECharts -->
   <div id="main" style="width: 600px;height:400px;"></div>
-
+<!-- Initializes an ECharts instance using echarts.init() and targets the "main" div element
+    Contains a commented data array showing the original format-->
+    
     <script type="text/javascript">
       // Initialize the echarts instance based on the prepared dom
       var myChart = echarts.init(document.getElementById('main'));
