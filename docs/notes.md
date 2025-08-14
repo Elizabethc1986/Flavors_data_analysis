@@ -1,3 +1,13 @@
+## 2025-08-06
+Goals:
+-Made a plan around Elizabeth´s webiste
+-We obtained the domain name for the Elizabeth´s Website
+-Use the random forest model
+Next sesion:
+-Continue with the plan : create more visualization
+-Create projections
+
+
 ---
 titulo: "Notas del Proyecto"
 actualizacion: 2025-07-06

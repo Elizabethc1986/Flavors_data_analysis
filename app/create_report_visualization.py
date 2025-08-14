@@ -1,25 +1,27 @@
-# Titulo: Exploracion de sabores__
-# Proposito: Cuantificar las preferencias_y mostrarlas en una forma grafica_ 
-# Actualizacion: 2025-07-06
-# Autores: Liz y JRO
+# Title: Flavor Exploration
+# Purpose: To quantify preferences and present them in a graphical form
+# Last updated: 2025-07-06
+# Authors: Liz and JRO
 
 #-------------
-# METAS: 
+# GOALS:
 #-------------
-# La idea es usando uno base de datos para create_report_visualization
-# - Un reporte
-# - Una visualizacion de los datos
+# The idea is to use a database to create:
+# - A report
+# - A data visualization
 
-# Importar SQLite
+# Import SQLite
 import sqlite3
 
 print("Bienvenida a la exploracion de sabores!")
 
-# Connectar a nuestra base de datos / archivo
+# Connect with our databasse / file
 connection = sqlite3.connect("data/flavors.db")
 cursor = connection.cursor()
-# Correr algunos queries:
-# (1) Que tipo de sabor preferido tienen las personas con exposicion culinaria Mediterraneo.Top preferred taste for mediterranean people.Visualization bar chart
+# Run some queries:
+# (1) What type of preferred taste do people with Mediterranean culinary exposure have?
+#     Top preferred taste for Mediterranean individuals.
+#     Visualization: Bar chart
 
 # Filter only on historical quisine of Mediterranan
 # Question: In SQL, how to filter on a text value within column of data?
@@ -47,7 +49,8 @@ cursor = connection.cursor()
 
 rows = cursor.execute("SELECT preferred_taste, COUNT(*) AS taste_count FROM flavors WHERE historical_cuisine_exposure = 'Mediterranean' GROUP BY preferred_taste ORDER BY taste_count DESC;").fetchall()
 print(rows)
-# (2) Cual es en promedio de edad para personas con ciclo de sueño early Bird.What is the average of the age  for people with a sleep "early sleep".Visualization histogram
+# (2) What is the average age of people with an "Early Bird" sleep cycle?
+#     Visualization: Histogram
 rows = cursor.execute("SELECT AVG(age) AS ave_age FROM flavors WHERE sleep_cycle = 'night' ;").fetchall()
 print(rows)
 
@@ -59,12 +62,122 @@ print(rows)
 rows = cursor.execute("""SELECT preferred_taste FROM flavors WHERE age = 25 GROUP BY preferred_taste ORDER BY preferred_taste ASC;""").fetchall()
 print(rows)
 
-#(5)Cuantas personas entre 18 -50 años les gusta ejercicio fuerte,viven en un clima seco y es gusta el sabor sour.Visualization to research or explore
+# (5) How many people aged between 18 and 50 enjoy intense exercise, live in a dry climate, and prefer the sour taste?
+#     Visualization: To research or explore
 total = cursor.execute("""SELECT COUNT(*) AS total_personas FROM flavors WHERE age > 18 AND age < 50 AND exercise_habits = 'Heavy' AND climate_zone = 'Dry' AND preferred_taste = 'Sour';""").fetchone()
 print(f"Total de personas: {total[0]}")
 
-# Mostrar la informacion en la pantalla
+# Display the information on the screen
 
-# Usar una libreria de visualizacion (por ejemplo: Apache ECharts, o D3.JS) 
-# para hacer una exploracion de visualizacion de los datos
+# Use a visualization library (for example: Apache ECharts or D3.js)
+# to perform an exploratory data visualization
+
+# 4. Random Forest https://www.geeksforgeeks.org/machine-learning/random-forest-regression-in-python/
+# Import necessary libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import sklearn
+import warnings
+from sklearn.preprocessing import LabelEncoder
+from sklearn.impute import KNNImputer
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import f1_score
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import cross_val_score
+from sklearn.metrics import accuracy_score, classification_report
+# Connect with our database
+connection = sqlite3.connect("data/flavors.db")
+cursor = connection.cursor()
+
+# Read data from a table (for example, the "orders" table)
+df = pd.read_sql_query("SELECT * FROM flavors", connection)
+# 3. Explore columns
+df = df.copy()
+df['preferred_taste'] = df['preferred_taste'].map({'Salty': 1, 'Swweet': 0, 'Sour': 2,'Spicy': 3})
+df['climate_zone'] = df['climate_zone'].map({'Dry': 1, 'Temperate': 0, 'Cold': 2,'Tropical': 3})
+df['sleep_cycle'] = df['sleep_cycle'].map({'Early Bird': 1, 'Night Owl': 0, 'Irregular': 2})
+print("Columnas disponibles:", df.columns)
+
+# Remove rows where y is NaN
+df = df.dropna(subset=['preferred_taste'])  # Make sure that 'Clase' is the correct name
+X = df.drop('preferred_taste', axis=1)
+y = df['preferred_taste']
+df.replace('', np.nan, inplace=True)
+# 4. Select the columns you will use
+# Suppose your target variable is 'delivered' (0 or 1) and the rest are numerical
+# Change these names to the actual ones according to your database
+columnas_escogidas = ['age', 'climate_zone', 'sleep_cycle']  # only those you want to use
+X = df[columnas_escogidas].copy()
+y = df['preferred_taste']
+
+
+# 5. Split into train/test
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=10)
+# 6. Train Random Forest model
+model = RandomForestClassifier(n_estimators=100, random_state=10)
+model.fit(X_train, y_train)
+# 7. Evaluate model
+y_pred = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Reporte de clasificación:")
+print(classification_report(y_test, y_pred))
+# 8. Save the trained model (optional)
+import joblib
+joblib.dump(model, 'modelo_random_forest.pkl')
+print(df.head())
+print(df.dtypes)
+
+# New data
+nuevo_dato = {'age': 39, 'climate_zone': 3, 'sleep_cycle': 'Early Bird'}
+# Convert to DataFrame
+nuevo_df = pd.DataFrame([nuevo_dato])
+# Map the categorical values exactly as before
+nuevo_df['climate_zone'] = nuevo_df['climate_zone'].map({'Dry': 1, 'Temperate': 0, 'Cold': 2,'Tropical': 3})
+nuevo_df['sleep_cycle'] = nuevo_df['sleep_cycle'].map({'Early Bird': 1, 'Night Owl': 0, 'Irregular': 2})
+print("Columnas disponibles:", nuevo_df.columns)
+columnas_escogidas = ['age', 'climate_zone', 'sleep_cycle']
+nuevo_df = nuevo_df[columnas_escogidas]
+import joblib
+# Load model from the .pkl file
+modelo_cargado = joblib.load('modelo_random_forest.pkl')
+# Make prediction
+prediccion = modelo_cargado.predict(nuevo_df)
+
+# Display result
+if prediccion[0] == 0:
+    sabor = "Sweet"
+elif prediccion[0] == 1:
+    sabor = "Salty"
+elif prediccion[0] == 2:
+    sabor = "Sour"
+elif prediccion[0] == 3:
+    sabor = "Spicy"
+else:
+    sabor = "Desconocido"
+
+print("Predicción:", sabor)
+# This shows you how many positives/negatives it predicts correctly or incorrectly
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+
+conf_matrix = confusion_matrix(y_test, y_pred)
+disp = ConfusionMatrixDisplay(confusion_matrix=conf_matrix)
+disp.plot()
+# This will show you if your model is failing to detect the negative cases.
+
+from sklearn.metrics import classification_report
+
+print(classification_report(y_test, y_pred))
+# Pay attention to:
+
+# Precision (for class 1) → how many of the predicted positives were actually positive.
+
+# Recall (for class 0) → whether it really detects the negatives.
+
+# F1-Score → balance between precision and recall.
+print(y.value_counts(normalize=True))
 
