@@ -1,3 +1,16 @@
+## 2025-08-13
+Accomplishments:
+-We linked the domain with the website.
+-Made some changes on the websites.Exploring
+-We fixed how to push the information from vs codium to git hub
+
+Nex time:
+-Visualizations Java script
+-Look for more models
+-Information about art,music,nature
+-Information analyze information for non profit organizations
+
+
 ## 2025-08-06
 Goals:
 -Made a plan around Elizabeth´s webiste

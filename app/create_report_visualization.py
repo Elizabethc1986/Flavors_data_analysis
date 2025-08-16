@@ -181,3 +181,27 @@ print(classification_report(y_test, y_pred))
 # F1-Score → balance between precision and recall.
 print(y.value_counts(normalize=True))
 
+
+# Calculate the correlation matrix
+numeric_df = nuevo_df.select_dtypes(include='number')
+corr_matrix = numeric_df.corr()
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
+plt.show()
+print(corr_matrix)
+#Fix the Nan
+print(nuevo_df[['age', 'climate_zone', 'sleep_cycle', ]].head(10))
+subset_df = nuevo_df[['age', 'climate_zone', 'sleep_cycle']].apply(pd.to_numeric, errors='coerce')
+subset_df = subset_df.dropna()  # drop rows with any NaNs
+# OR
+# subset_df = subset_df.fillna(0)  # fill with 0s, if that makes sense
+#Make sure you have enough rows
+print(nuevo_df[['age', 'climate_zone', 'sleep_cycle']].shape)
+#Handle missing data
+subset_df = nuevo_df[['age', 'climate_zone', 'sleep_cycle']].dropna()
+
+#
+corr_matrix = subset_df.corr()
+print(corr_matrix)
+# the results show that the categorical variables/climate zone/sleep cycle/ encoded as numbers may not be meaningful or may cause weird results like NaNs.End of the analysis
